@@ -58,19 +58,36 @@
       <div class="row">
           <label>Enter an item ID</label>
             <div class="input-group col-lg-12">
-            <input type="text" class="form-control">
+            <input id="foodItemId" type="text" class="form-control">
                 <span class="input-group-btn">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button id="submitFoodItemId" type="submit" class="btn btn-primary">Submit</button>
                 </span>
             </div>
+      </div>
+
+      <div class = "row results">
+        <div class = "col-md-4">
+          <h3 id = "foodName">Food Name</h3>
+          <h4 id = "foodCategory">Food Category</h4>
+          <h4 id = "locationName">Current Locaiton</h4>
+          <h4 id = "facilityName"> FacilityName</h4>
         </div>
+  
+        <div class = "col-md-4 map">
+        </div>
+      </div>
+      <div class = "row steps">
+
+      </div>
+
 
       <hr>
 
       <footer>
         <p>&copy; GovHack 2017</p>
       </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    </div> <!-- /container -->        
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>

@@ -4,10 +4,13 @@
    Author's custom styles
    ========================================================================== */
 
+.results{
+	display:none;
+}
 
-
-
-
+.map iframe{
+	margin-top:20px;
+}
 
 
 
