@@ -45,7 +45,7 @@
     </nav>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <div class="jumbotron p1">
       <div class="container">
         <h1>Food Passport</h1>
         <h2>Track Food Provenance</h2>
@@ -55,9 +55,9 @@
 
     <div class="container">
 
-      <div class="row">
+      <div class="row p1">
           <label>Enter an item ID</label>
-            <div class="input-group col-lg-12">
+            <div class="input-group col-md-12">
             <input id="foodItemId" type="text" class="form-control">
                 <span class="input-group-btn">
                   <button id="submitFoodItemId" type="submit" class="btn btn-primary">Submit</button>
@@ -65,25 +65,34 @@
             </div>
       </div>
 
-      <div class = "row results">
+      <div class = "row results p1">
         <div class = "col-md-4">
           <h3 id = "foodName">Food Name</h3>
           <h4 id = "foodCategory">Food Category</h4>
           <h4 id = "locationName">Current Locaiton</h4>
           <h4 id = "facilityName"> FacilityName</h4>
         </div>
-  
         <div class = "col-md-4 map">
         </div>
-      </div>
-      <div class = "row steps">
+        <div class="col-md-4">
+          <div class='moreInfo'><button id = "showChain" class = "btn btn-lg btn-info" >Show Chain</button></div>
+        </div>
 
       </div>
+      <div class = "row steps p1">
+
+      </div>
 
 
-      <hr>
+      <div class = "row p2">
+        <div class='backPage'><button id = "backPage" class = "btn btn-sm btn-info" >&larr; Back</button></div> 
+      </div>
+
+
+      
 
       <footer>
+        <hr>
         <p>&copy; GovHack 2017</p>
       </footer>
     </div> <!-- /container -->        

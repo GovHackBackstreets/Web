@@ -1,10 +1,26 @@
 var requestSettings;
+var json;
 
 $( "#submitFoodItemId" ).click(function() {
 	$('.results').fadeOut();
-  getFoodItem( $('#foodItemId').val() ) ;
+  	getFoodItem( $('#foodItemId').val() ) ;
 });
 
+$("#showChain").click(function(){
+
+	$('.p1').fadeOut(function(){
+		$('.p2').fadeIn();
+	});
+
+})
+
+$("#backPage").click(function(){
+
+	$('.p2').fadeOut(function(){
+		$('.p1').fadeIn();
+	});
+
+})
 
 getFoodItem = function( itemId ){
 	requestSettings = {
@@ -12,10 +28,10 @@ getFoodItem = function( itemId ){
   "crossDomain": true,
   "url": "http://govhacksapi.herokuapp.com/stuff/" + itemId ,
   "method": "GET",
-
 }
 
 $.ajax(requestSettings).done(function (response) {
+	json = response;
 	updatePage(response);
 });
 }
@@ -28,7 +44,7 @@ updatePage = function(r){
 	 $('#locationName').text(r.steps[0].locationName);
 	 $('#facilityName').text(r.steps[0].facilityName);
 	 $('.map').html(
-	 	'<iframe width="300" height="170" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q='+r.steps[0].geoloc.lat+','+r.steps[0].geoloc.long+'&hl=es;z=14&amp;output=embed"></iframe>'
+	 	'<iframe width="240" height="240" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q='+r.steps[0].geoloc.lat+','+r.steps[0].geoloc.long+'&hl=es;z=14&amp;output=embed"></iframe>'
 	 )
 
 	 for(var i = 0; i < r.steps.length; i++){
@@ -46,7 +62,7 @@ updatePage = function(r){
         var facilityAllergens = r.steps[i].facilityAllergens;
         var stepLabel = 1+i;
 
-        $('.steps').append('<div class = row><div class = "col-md-4"><h4>'+stepLabel+'</h4><h5>'
+        $('.steps').append('<hr><div class = row><div class = "col-md-4"><h4>'+stepLabel+'</h4><h5>'
          + locationName +'</h5><h5>' + facilityName + '</h5><h5>'+ facilityAccredation+ 
          '</h5></div><div class = "col-md-4"><h4>Allergens</h4><h5>' + facilityAllergens + 
          '</h5><h4>Chemicals</h4><h5>'+ facilityChemicals + '</h5></div><div class = "col-md-4"><h4>Date In: ' + 
